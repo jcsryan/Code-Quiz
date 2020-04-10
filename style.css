@@ -1,0 +1,13 @@
+* {
+    margin: auto;
+    text-align: center;
+}
+
+p {
+    font-size: larger;
+    font-weight: 600;
+}
+
+.score-position {
+    margin-left: 100%;
+}
