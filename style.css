@@ -28,6 +28,25 @@ body {
     background-color: rgba(252, 248, 242, 1);
 }
 
+#score{
+    border: none;
+    outline: none;
+    background: #e04e10;
+    width: 100px;
+    height: 35px;
+    border-radius: 20px;
+    cursor: pointer;
+    float: right;
+    margin: 10px;
+}
+
+#score:hover{
+    background: #e04e10;
+    color: #f6f6f6;
+}
+
+
+
 .container {
     height: 420px;
     width: 1000px;

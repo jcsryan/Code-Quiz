@@ -34,7 +34,7 @@
   
   var currentQuestion = 0;
   var score = 0;
- 
+  var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
   var container = document.getElementById('quizContainer');
   var questionEl = document.getElementById('question');
@@ -49,6 +49,8 @@
 
   var mins = 1;
   var secs = mins * 60;
+
+
 
   function countDown() {
       setTimeout('Decrement()', 60);
@@ -128,4 +130,7 @@
       loadQuestion(currentQuestion);
   };
 
+
+
  loadQuestion(currentQuestion);
+
