@@ -1,4 +1,5 @@
  
+  //an array of questions to pull from
   var questions = [
     { "question": 'What does JS stand for', 
     "option1": 'Javascript',
@@ -32,10 +33,12 @@
     "answer": "3" }
   ];
   
+//misc score related variables
   var currentQuestion = 0;
   var score = 0;
   var highScores = JSON.parse(localStorage.getItem("highScores")) || [];
 
+  //dom referal variables
   var container = document.getElementById('quizContainer');
   var questionEl = document.getElementById('question');
   var opt1 = document.getElementById('opt1');
@@ -46,12 +49,14 @@
   var resultCont = document.getElementById('result');
   var totQuestions = questions.length;
 
-
+//timer variables
   var mins = 1;
   var secs = mins * 60;
 
 
-
+//these functions begin a countdown on the page loading.
+//once the countdown is at 0 the function brings the player
+//to the score page.
   function countDown() {
       setTimeout('Decrement()', 60);
   }
@@ -91,7 +96,8 @@
       return secs - Math.round(mins * 60);
   }
 
-
+//this function populates the radio buttons with questions
+//from the array above.
   function loadQuestion(questionIndex) {
       var i = questions[questionIndex];
       questionEl.textContent = (questionIndex + 1) + '. ' + i.question;
@@ -100,6 +106,9 @@
       opt3.textContent = i.option3;
       opt4.textContent = i.option4;
   }
+//this function cycles through the questions, adds the score as
+//well as adds or subtracts time to the counter function above
+//depending on if the users answer is correct or not.
   function loadNextQuestion() {
       var selectedOption = document.querySelector('input[type=radio]:checked');
       if(!selectedOption){
@@ -131,6 +140,6 @@
   };
 
 
-
+//calling the function.
  loadQuestion(currentQuestion);
 
